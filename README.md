@@ -8,7 +8,7 @@ other files like scripts etc.
 A list of files used by the Aurora engine can be found inside *src/format/aurora_types.h*.
 
 ## How to compile unbif
-1. Download this repository (If you don't like to use git, make use of GitHubs zip file)
+1. Download this repository (If you don't like to use git, make use of GitHubs [zip](https://github.com/marc-q/unbif/archive/master.zip) file)
 2. Open a terminal and navigate into the repository folder.
 3. Run `$ make` (Without `$ `).
 
