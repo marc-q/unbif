@@ -185,23 +185,18 @@ cmd_list (FILE  *f_bif,
 }
 
 //
-// Menu
+// CLI
 //
-
-static void
-version (void)
-{
-	printf ("unbif version 0.0.1\n");
-}
 
 static _Noreturn void
 usage (const int status)
 {
-	printf ("Usage: unbif [OPTIONS] <key_file> <bif_file>\n");
+	printf ("UnBif 0.0.1 (https://github.com/marc-q/unbif)\n");
+	
+	printf ("\nUsage: unbif [OPTIONS] <key_file> <bif_file>\n");
 	
 	printf ("\nOptions:\n");
 	printf ("%-25s %s\n", "-h", "Show this help");
-	printf ("%-25s %s\n", "-V", "Display version number");
 	printf ("%-25s %s\n", "-l", "Lists the files");
 	printf ("%-25s %s\n", "-x", "Extract files from an archive");
 	
@@ -219,14 +214,11 @@ main (int argc, char **argv)
 	bool cmd_list_a = false, cmd_unpack_a = false;
 	do
 	{
-		opt = getopt (argc, argv, "hVlx");
+		opt = getopt (argc, argv, "hlx");
 		switch (opt)
 		{
 		case 'h':
 			usage (EXIT_SUCCESS);
-		case 'V':
-			version ();
-			exit (EXIT_SUCCESS);
 		case 'l':
 			cmd_list_a = true;
 			break;
