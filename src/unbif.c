@@ -194,32 +194,25 @@ version (void)
 	printf ("unbif version 0.0.1\n");
 }
 
-static void
-usage (void)
+static _Noreturn void
+usage (const int status)
 {
 	printf ("Usage: unbif [OPTIONS] <key_file> <bif_file>\n");
-}
-
-static void
-help (void)
-{
-	usage ();
 	
 	printf ("\nOptions:\n");
 	printf ("%-25s %s\n", "-h", "Show this help");
 	printf ("%-25s %s\n", "-V", "Display version number");
 	printf ("%-25s %s\n", "-l", "Lists the files");
 	printf ("%-25s %s\n", "-x", "Extract files from an archive");
+	
+	exit (status);
 }
 
 int
 main (int argc, char **argv)
 {
 	if (argc == 1)
-	{
-		usage ();
-		exit (EXIT_FAILURE);
-	}
+		usage (EXIT_FAILURE);
 	
 	// Parse options
 	int opt = 0;
@@ -230,8 +223,7 @@ main (int argc, char **argv)
 		switch (opt)
 		{
 		case 'h':
-			help ();
-			exit (EXIT_SUCCESS);
+			usage (EXIT_SUCCESS);
 		case 'V':
 			version ();
 			exit (EXIT_SUCCESS);
@@ -244,8 +236,7 @@ main (int argc, char **argv)
 		case -1:
 			break;
 		default:
-			usage ();
-			exit (EXIT_FAILURE);
+			usage (EXIT_FAILURE);
 		}
 	} while (opt != -1);
 	
@@ -258,8 +249,7 @@ main (int argc, char **argv)
 	else if ((argc - optind) < 2 ||
 	         optind == 1)
 	{
-		usage ();
-		exit (EXIT_FAILURE);
+		usage (EXIT_FAILURE);
 	}
 	
 	// Extract the filenames from args
