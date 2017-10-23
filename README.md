@@ -18,9 +18,6 @@ A list of files used by the Aurora engine can be found inside *src/format/aurora
 ### Print the help
 `$ unbif -h`
 
-### Print the version
-`$ unbif -V`
-
 ### List files
 `$ unbif -l keyfile.key biffile.bif`
 
