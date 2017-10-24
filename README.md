@@ -1,7 +1,7 @@
-# unbif
+# UnBif
 
 ## About
-Unbif is a small tool that can be used to extract files from *BIFF* archives.
+UnBif is a small tool that can be used to extract files from *BIFF* archives.
 BIFF archives can be found in games that use BioWare’s Aurora engine and contain
 other files like scripts and images.
 
